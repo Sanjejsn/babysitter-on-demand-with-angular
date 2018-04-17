@@ -1,0 +1,18 @@
+<div class="sitter-detail">
+    <img src="{{sitter.imagePath}}" alt="{{sitter.name}}">
+    <div class="description">
+        <h4>{{sitter.name}}, {{sitter.age}}</h4>
+        <p>
+            <span> City:</span> {{sitter.city}}</p>
+        <p>
+            <span> Email:</span> {{sitter.email}}</p>
+        <p>
+            <span> Qualifications:</span> {{sitter.qualifications}}</p>
+        <p>
+            <span>Description:</span>
+        </p>
+        <p>{{ sitter.description }}</p>
+
+        <button (click)="goBack()">Back To List</button>
+    </div>
+</div>

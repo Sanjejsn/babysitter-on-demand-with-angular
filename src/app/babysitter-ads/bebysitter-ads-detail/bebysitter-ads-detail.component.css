@@ -1,0 +1,71 @@
+.sitter-detail {
+
+    display: grid;
+    max-width: 60%;
+    margin: 0 auto;
+    justify-items: center;
+    background-color: white;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+
+img {
+    padding-top: 20px;
+    max-height: 350px;
+    width: auto;
+    border-radius: 100%;
+
+}
+
+.description {
+    display: grid;
+    padding: 20px;
+    grid-template-rows: auto;
+    grid-row-gap: 10px;
+}
+
+h4 {
+    font-size: 18px;
+    color:#6495ED;
+}
+
+button {
+    max-width: 40%;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: #3eb891;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+span {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 640px) {
+
+    .sitter-detail {
+        max-width: 90%;
+        grid-template-columns: auto;
+        justify-items: center;
+    }
+
+    img {
+        padding-top: 20px;
+        max-height: 200px;
+        width: auto;
+        border-radius: 100%;
+    
+    }
+
+
+
+
+}
+
+
+
+

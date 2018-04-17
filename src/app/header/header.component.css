@@ -1,31 +1,57 @@
 .header {
-    display: grid;
-    align-content: center;
-    height: 100vh;
+    display:grid;
+    background-color: #2d333a;
 }
 
 
 .header-nav {
     display: grid;
+    grid-template-columns: auto auto auto auto auto;
     justify-content: start;
     list-style-type: none;
-    grid-row-gap: 15px;
-
+    grid-column-gap: 15px;
+    align-items: center;
 
 }
 
+
 a {
     text-decoration: none;
-    color: black;
     cursor: pointer;
+    color: lightgray;
+    font-size: 18px;
 
 }
 
 li {
-    background-color: white;
-    padding: 10px;
+   padding: 5px;
     padding-left: 20px;
-    border-radius: 0 5px 5px 0;
+}
+
+img {
+    height: 40px;
+    width: auto;
+    cursor: pointer;
+}
+
+.active {
+    color: lightcoral;
+}
+
+
+
+@media screen and (max-width: 640px) {
+    .header {
+
+         padding: 30px; 
+    } 
+
+    .header-nav {
+        justify-content: center;
+        grid-template-columns: auto;
+
+    }
+
 }
 
 

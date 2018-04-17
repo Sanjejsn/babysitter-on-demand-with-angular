@@ -521,3 +521,9 @@
       left: 5px;
     }
   }
+
+  @media screen and (max-width: 640px) {
+    #wrap {
+      top: 60%;
+    }
+  }

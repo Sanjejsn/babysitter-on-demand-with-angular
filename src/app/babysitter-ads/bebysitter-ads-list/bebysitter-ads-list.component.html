@@ -1,0 +1,11 @@
+<form class="filter-form" (ngSubmit)="onSubmit(form)" #form="ngForm">
+  <input type="text" name="city" placeholder="Enter city name" ngModel autocomplete="off">
+  <select name="qualifications" id="qualifications" ngModel [ngModel]="qualification">
+    <option *ngFor="let qualification of qualifications" [ngValue]="qualification">{{ qualification }}</option>
+  </select>
+  <button type="submit">Search</button>
+</form>
+
+
+<app-babysitter-ads-item *ngFor="let bebysitter of bebysitters | educationFilter : qualification | cityFilter : city" [sitter]="bebysitter"></app-babysitter-ads-item>
+<p class="no-result" *ngIf="!((bebysitters  | educationFilter : qualification | cityFilter : city).length)">No results found!</p>
