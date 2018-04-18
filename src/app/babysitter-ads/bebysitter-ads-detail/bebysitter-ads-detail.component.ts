@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Bebysitter } from '../../models/bebysitter';
 import { BebysitterService } from '../bebysitter.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-bebysitter-ads-detail',
@@ -14,7 +15,7 @@ export class BebysitterAdsDetailComponent implements OnInit {
   sitter: Bebysitter;
 
   constructor(private route: ActivatedRoute, private bebysitterService: BebysitterService,
-    private router: Router) { }
+    private router: Router, private location: Location) { }
 
   ngOnInit() {
     this.id = +this.route.snapshot.params['id']; // converts string into number
@@ -22,7 +23,7 @@ export class BebysitterAdsDetailComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/babysitter-ads']);
+    this.location.back();
   }
 
 

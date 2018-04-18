@@ -8,7 +8,8 @@
     <p>{{ (sitter.description.length>250)? (sitter.description | slice:0:250)+'...':(sitter.description) }}
     </p>
     <div>
-      <a [routerLink]="[id]">Babysitter profile</a>
+      <a (click)="goToDetail()">Babysitter profile</a>
+
     </div>
   </div>
 </div>

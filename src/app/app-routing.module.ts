@@ -19,7 +19,7 @@ const appRoutes: Routes = [
     {
         path: 'babysitter-ads', component: BabysitterAdsComponent, children: [
             {
-                path: '', component: BebysitterAdsListComponent, data: { shouldDetach: true }
+                path: '', component: BebysitterAdsListComponent
             },
 
             { path: ':id', component: BebysitterAdsDetailComponent }
