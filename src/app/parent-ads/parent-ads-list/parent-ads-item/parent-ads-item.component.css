@@ -1,0 +1,23 @@
+
+.parent-item {
+    display: grid;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    justify-items: center;
+}
+
+a {
+    cursor: pointer;
+    color:#6495ED;
+
+
+}
+
+.button{
+    padding-top: 20px;
+}
+

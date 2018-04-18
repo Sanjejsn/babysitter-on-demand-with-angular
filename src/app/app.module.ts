@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ParentAdsComponent } from './parent-ads/parent-ads.component';
-import { ParentAdsItemComponent } from './parent-ads/parent-ads-item/parent-ads-item.component';
 import { CssBabyComponent } from './header/css-baby/css-baby.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AboutAppComponent } from './about-app/about-app.component';
@@ -18,6 +17,10 @@ import { SetAdComponent } from './set-ad/set-ad.component';
 import { SitterAdComponent } from './set-ad/sitter-ad/sitter-ad.component';
 import { ParentAdComponent } from './set-ad/parent-ad/parent-ad.component';
 import { BebysitterService } from './babysitter-ads/bebysitter.service';
+import { ParentAdsDetailComponent } from './parent-ads/parent-ads-detail/parent-ads-detail.component';
+import { ParentAdsListComponent } from './parent-ads/parent-ads-list/parent-ads-list.component';
+import { ParentAdsItemComponent } from './parent-ads/parent-ads-list/parent-ads-item/parent-ads-item.component';
+import { ParentService } from './parent-ads/parent.service';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,8 @@ import { BebysitterService } from './babysitter-ads/bebysitter.service';
     SetAdComponent,
     SitterAdComponent,
     ParentAdComponent,
+    ParentAdsListComponent,
+    ParentAdsDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +47,8 @@ import { BebysitterService } from './babysitter-ads/bebysitter.service';
 
   ],
   providers: [
-    BebysitterService],
+    BebysitterService,
+    ParentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

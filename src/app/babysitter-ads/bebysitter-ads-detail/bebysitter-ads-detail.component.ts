@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Bebysitter } from '../../models/bebysitter';
 import { BebysitterService } from '../bebysitter.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
@@ -15,7 +15,7 @@ export class BebysitterAdsDetailComponent implements OnInit {
   sitter: Bebysitter;
 
   constructor(private route: ActivatedRoute, private bebysitterService: BebysitterService,
-    private router: Router, private location: Location) { }
+    private location: Location) { }
 
   ngOnInit() {
     this.id = +this.route.snapshot.params['id']; // converts string into number

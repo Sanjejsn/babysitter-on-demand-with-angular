@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Parent } from '../../../models/parent';
 
 @Component({
   selector: 'app-parent-ads-item',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParentAdsItemComponent implements OnInit {
 
+  @Input() parentItem: Parent;
+
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  goToDetail() {
+
   }
 
 }

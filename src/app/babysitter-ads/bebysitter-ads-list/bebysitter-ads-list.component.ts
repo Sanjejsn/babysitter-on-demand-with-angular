@@ -4,7 +4,6 @@ import { NgForm } from '@angular/forms';
 import { BebysitterService } from '../bebysitter.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/forkJoin';
 
 @Component({
   selector: 'app-bebysitter-ads-list',
@@ -67,6 +66,8 @@ export class BebysitterAdsListComponent implements OnInit {
       this.filteredBabysitters = this.bebysitters;
     } else if (this.qualification === 'Enter qualifications') {
       this.filteredBabysitters = this.bebysitters.filter(sitter => sitter.city.toLowerCase() === this.city);
+    } else if (!this.city.length && this.qualification !== 'Enter qualifications') {
+      this.filteredBabysitters = this.bebysitters.filter(sitter => sitter.qualifications === this.qualification);
     } else {
       this.filteredBabysitters =
         this.bebysitters.filter(sitter => sitter.city.toLowerCase() === this.city && sitter.qualifications === this.qualification);
