@@ -17,7 +17,12 @@ a {
 
 }
 
-.button{
-    padding-top: 20px;
-}
+
+span {
+    font-weight: bold;
+  }
+
+  p {
+      padding-bottom: 15px;
+  }
 

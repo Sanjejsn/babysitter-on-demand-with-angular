@@ -16,10 +16,13 @@ button {
 
 .set-add {
     display: grid;
-
     padding-top: 20px;
     display: grid;
     grid-template-rows: auto;
     grid-row-gap: 10px;
+}
+
+.active {
+    border: 2px solid red;
 }
 

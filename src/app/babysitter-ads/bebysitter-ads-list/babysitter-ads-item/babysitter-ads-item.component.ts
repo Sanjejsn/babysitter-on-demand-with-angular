@@ -14,7 +14,7 @@ export class BabysitterAdsItemComponent implements OnInit {
   @Input() sitter: Bebysitter;
   id: number;
 
-  constructor(private bebysitterService: BebysitterService, private router: Router,
+  constructor(private router: Router,
     private route: ActivatedRoute) { }
 
   ngOnInit() {

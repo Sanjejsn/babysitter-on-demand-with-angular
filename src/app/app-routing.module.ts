@@ -11,6 +11,8 @@ import { BabysitterAdsComponent } from './babysitter-ads/babysitter-ads.componen
 import { SetAdComponent } from './set-ad/set-ad.component';
 import { SitterAdComponent } from './set-ad/sitter-ad/sitter-ad.component';
 import { ParentAdComponent } from './set-ad/parent-ad/parent-ad.component';
+import { ParentAdsDetailComponent } from './parent-ads/parent-ads-detail/parent-ads-detail.component';
+import { ParentAdsListComponent } from './parent-ads/parent-ads-list/parent-ads-list.component';
 
 
 const appRoutes: Routes = [
@@ -25,7 +27,12 @@ const appRoutes: Routes = [
             { path: ':id', component: BebysitterAdsDetailComponent }
         ]
     },
-    { path: 'parent-ads', component: ParentAdsComponent },
+    {
+        path: 'parent-ads', component: ParentAdsListComponent, children: [
+
+            { path: ':id', component: ParentAdsDetailComponent }
+        ],
+    },
     { path: 'info', component: AboutAppComponent },
     {
         path: 'set-ad', component: SetAdComponent, children: [

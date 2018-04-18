@@ -3,5 +3,7 @@
   <button type="submit">Search</button>
 </form>
 
+<router-outlet></router-outlet>
+
 <app-parent-ads-item *ngFor="let parent of parents" [parentItem]="parent"></app-parent-ads-item>
-<!-- <p class="no-result" *ngIf="noResults()">No results found!</p> -->
+<p class="no-result" *ngIf="noResults()">No results found!</p>

@@ -1,0 +1,43 @@
+.parent-detail {
+
+    display: grid;
+    max-width: 60%;
+    margin: 0 auto;
+    background-color: white;
+    margin-top: 50px;
+    border-radius: 20px;
+    padding: 20px;
+    grid-template-rows: auto;
+    grid-row-gap: 10px;
+
+}
+
+
+
+h4 {
+    font-size: 18px;
+    color:#6495ED;
+}
+
+
+span {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 640px) {
+
+    .sitter-detail {
+        max-width: 90%;
+        grid-template-columns: auto;
+        justify-items: center;
+    }
+
+
+
+
+
+}
+
+
+
+

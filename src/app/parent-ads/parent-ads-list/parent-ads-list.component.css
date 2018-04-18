@@ -28,3 +28,8 @@ input {
     color: #2d333a; 
 }
 
+.no-result {
+    text-align: center;
+    font-size: 18px;
+    padding-top:20px;
+}

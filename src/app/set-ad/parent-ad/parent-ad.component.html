@@ -1,3 +1,14 @@
-<p>
-  parent-ad works!
-</p>
+<form class="form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+
+  <input type="text" name="name" placeholder="enter name" ngModel required>
+
+
+  <input type="text" name="email" placeholder="enter email" ngModel email required #email="ngModel">
+  <p *ngIf="!email.valid && email.touched">
+    Enter valid e-mail adress.
+  </p>
+  <input type="text" name="city" placeholder="enter city" ngModel required>
+
+  <textarea ngModel maxlength="600" name="description" id="sanja" cols="30" rows="10" placeholder="enter add text (max 600 karaktera)"></textarea>
+  <button type="submit" [disabled]="!form.valid">Save</button>
+</form>
