@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ParentService } from '../parent.service';
-import { Parent } from '../../models/parent';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+import { Parent } from '../models/parent';
+import { ParentService } from './parent.service';
 
 
 @Component({

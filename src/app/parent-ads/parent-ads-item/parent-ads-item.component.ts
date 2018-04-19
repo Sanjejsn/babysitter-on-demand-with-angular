@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Parent } from '../../../models/parent';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Parent } from '../../models/parent';
 
 @Component({
   selector: 'app-parent-ads-item',

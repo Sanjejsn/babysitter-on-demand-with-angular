@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { ParentAdsComponent } from './parent-ads/parent-ads.component';
 import { CssBabyComponent } from './header/css-baby/css-baby.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AboutAppComponent } from './about-app/about-app.component';
@@ -18,10 +17,11 @@ import { SitterAdComponent } from './set-ad/sitter-ad/sitter-ad.component';
 import { ParentAdComponent } from './set-ad/parent-ad/parent-ad.component';
 import { BebysitterService } from './babysitter-ads/bebysitter.service';
 import { ParentAdsDetailComponent } from './parent-ads/parent-ads-detail/parent-ads-detail.component';
-import { ParentAdsListComponent } from './parent-ads/parent-ads-list/parent-ads-list.component';
-import { ParentAdsItemComponent } from './parent-ads/parent-ads-list/parent-ads-item/parent-ads-item.component';
 import { ParentService } from './parent-ads/parent.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ParentAdsListComponent } from './parent-ads/parent-ads-list.component';
+import { ParentAdsItemComponent } from './parent-ads/parent-ads-item/parent-ads-item.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     BebysitterAdsListComponent,
     BabysitterAdsItemComponent,
-    ParentAdsComponent,
     ParentAdsItemComponent,
     CssBabyComponent,
     AboutAppComponent,
@@ -45,7 +44,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFontAwesomeModule
 
   ],
   providers: [

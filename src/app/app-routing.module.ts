@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HeaderComponent } from './header/header.component';
-import { ParentAdsComponent } from './parent-ads/parent-ads.component';
 import { AboutAppComponent } from './about-app/about-app.component';
 import { CssBabyComponent } from './header/css-baby/css-baby.component';
 import { BebysitterAdsListComponent } from './babysitter-ads/bebysitter-ads-list/bebysitter-ads-list.component';
@@ -12,7 +11,7 @@ import { SetAdComponent } from './set-ad/set-ad.component';
 import { SitterAdComponent } from './set-ad/sitter-ad/sitter-ad.component';
 import { ParentAdComponent } from './set-ad/parent-ad/parent-ad.component';
 import { ParentAdsDetailComponent } from './parent-ads/parent-ads-detail/parent-ads-detail.component';
-import { ParentAdsListComponent } from './parent-ads/parent-ads-list/parent-ads-list.component';
+import { ParentAdsListComponent } from './parent-ads/parent-ads-list.component';
 
 
 const appRoutes: Routes = [
