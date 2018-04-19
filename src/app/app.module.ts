@@ -21,6 +21,7 @@ import { ParentAdsDetailComponent } from './parent-ads/parent-ads-detail/parent-
 import { ParentAdsListComponent } from './parent-ads/parent-ads-list/parent-ads-list.component';
 import { ParentAdsItemComponent } from './parent-ads/parent-ads-list/parent-ads-item/parent-ads-item.component';
 import { ParentService } from './parent-ads/parent.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { ParentService } from './parent-ads/parent.service';
     ParentAdsDetailComponent,
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule
