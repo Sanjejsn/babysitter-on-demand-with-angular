@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BebysitterService } from './bebysitter.service';
-import { Bebysitter } from '../models/bebysitter';
+import { BabysitterService } from './babysitter.service';
+import { Babysitter } from '../models/babysitter';
 
 @Component({
   selector: 'app-babysitter-ads',
@@ -10,9 +10,9 @@ import { Bebysitter } from '../models/bebysitter';
 })
 export class BabysitterAdsComponent implements OnInit {
 
-  selected: Bebysitter;
+  selected: Babysitter;
 
-  constructor(private bebysitterService: BebysitterService) { }
+  constructor(private bebysitterService: BabysitterService) { }
 
   ngOnInit() {
 

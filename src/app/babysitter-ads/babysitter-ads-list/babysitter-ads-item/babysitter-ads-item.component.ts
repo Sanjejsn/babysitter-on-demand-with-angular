@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Bebysitter } from '../../../models/bebysitter';
-import { BebysitterService } from '../../bebysitter.service';
+import { Babysitter } from '../../../models/babysitter';
+import { BabysitterService } from '../../babysitter.service';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class BabysitterAdsItemComponent implements OnInit {
 
 
-  @Input() sitter: Bebysitter;
+  @Input() sitter: Babysitter;
   id: number;
 
   constructor(private router: Router,

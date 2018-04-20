@@ -1,12 +1,11 @@
-import { Bebysitter } from '../models/bebysitter';
+import { Babysitter } from '../models/babysitter';
 import { EventEmitter, Output } from '@angular/core';
 
 
+export class BabysitterService {
 
-export class BebysitterService {
-
-    bebysitters: Bebysitter[] = [
-        new Bebysitter(
+    babysitters: Babysitter[] = [
+        new Babysitter(
             'Sanja Cukaric',
             'injacs@gmail',
             '1986',
@@ -17,7 +16,7 @@ export class BebysitterService {
       voluptatum atque facere quod veniam. Fugiat consectetur laudantium ex ratione deserunt beatae ut similique eveniet, veniam
       harum magnam aut. Nobis animi fugiat amet voluptas minus quo rem officia, asperiores quae! Quasi delectus explicabo illo?`,
         ),
-        new Bebysitter(
+        new Babysitter(
             'Marija Injac',
             'injacs@gmail',
             '1988',
@@ -28,7 +27,7 @@ export class BebysitterService {
       voluptatum atque facere quod veniam. Fugiat consectetur laudantium ex ratione deserunt beatae ut similique eveniet, veniam
       harum magnam aut. Nobis animi fugiat amet voluptas minus quo rem officia, asperiores quae! Quasi delectus explicabo illo?`
         ),
-        new Bebysitter(
+        new Babysitter(
             'Vesna Injac',
             'injacs@gmail',
             '1989',

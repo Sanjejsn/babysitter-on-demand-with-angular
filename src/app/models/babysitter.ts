@@ -1,6 +1,6 @@
 let nextId = 0;
 
-export class Bebysitter {
+export class Babysitter {
 
 
     public name: string;

@@ -4,8 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { AboutAppComponent } from './about-app/about-app.component';
 import { CssBabyComponent } from './header/css-baby/css-baby.component';
-import { BebysitterAdsListComponent } from './babysitter-ads/bebysitter-ads-list/bebysitter-ads-list.component';
-import { BebysitterAdsDetailComponent } from './babysitter-ads/bebysitter-ads-detail/bebysitter-ads-detail.component';
+import { BabysitterAdsListComponent } from './babysitter-ads/babysitter-ads-list/babysitter-ads-list.component';
+import { BabysitterAdsDetailComponent } from './babysitter-ads/babysitter-ads-detail/babysitter-ads-detail.component';
 import { BabysitterAdsComponent } from './babysitter-ads/babysitter-ads.component';
 import { SetAdComponent } from './set-ad/set-ad.component';
 import { SitterAdComponent } from './set-ad/sitter-ad/sitter-ad.component';
@@ -20,10 +20,10 @@ const appRoutes: Routes = [
     {
         path: 'babysitter-ads', component: BabysitterAdsComponent, children: [
             {
-                path: '', component: BebysitterAdsListComponent
+                path: '', component: BabysitterAdsListComponent
             },
 
-            { path: ':id', component: BebysitterAdsDetailComponent }
+            { path: ':id', component: BabysitterAdsDetailComponent }
         ]
     },
     {

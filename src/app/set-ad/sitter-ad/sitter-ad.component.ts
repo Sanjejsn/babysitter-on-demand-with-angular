@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Bebysitter } from '../../models/bebysitter';
-import { BebysitterService } from '../../babysitter-ads/bebysitter.service';
+import { Babysitter } from '../../models/babysitter';
+import { BabysitterService } from '../../babysitter-ads/babysitter.service';
 import { Router } from '@angular/router';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-sitter-ad',
@@ -23,18 +24,20 @@ export class SitterAdComponent implements OnInit {
   qualifications = ['enter qualifications', 'Elementary school', 'High school', 'Student', 'Graduate'];
   qualification = 'enter qualifications';
 
-  submitedSitter: Bebysitter;
+  submitedSitter: Babysitter;
 
-  constructor(private bebysitterService: BebysitterService, private router: Router) { }
+  constructor(private babysitterService: BabysitterService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  onSubmit(form) {
+  onSubmit(form: NgForm) {
     this.submitedSitter = form.value;
-    this.submitedSitter.id = this.bebysitterService.bebysitters.length;
-    this.bebysitterService.bebysitters.push(this.submitedSitter);
+    this.submitedSitter.id = this.babysitterService.babysitters.length;
+    this.babysitterService.babysitters.push(this.submitedSitter);
     form.reset();
   }
+
+
 
 }

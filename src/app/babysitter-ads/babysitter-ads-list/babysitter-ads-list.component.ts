@@ -1,26 +1,26 @@
 import { Component, OnInit, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
-import { Bebysitter } from '../../models/bebysitter';
+import { Babysitter } from '../../models/babysitter';
 import { NgForm } from '@angular/forms';
-import { BebysitterService } from '../bebysitter.service';
+import { BabysitterService } from '../babysitter.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
-  selector: 'app-bebysitter-ads-list',
-  templateUrl: './bebysitter-ads-list.component.html',
-  styleUrls: ['./bebysitter-ads-list.component.css']
+  selector: 'app-babysitter-ads-list',
+  templateUrl: './babysitter-ads-list.component.html',
+  styleUrls: ['./babysitter-ads-list.component.css']
 })
-export class BebysitterAdsListComponent implements OnInit {
+export class BabysitterAdsListComponent implements OnInit {
 
   qualifications = ['Enter qualifications', 'Elementary school', 'High school', 'Student', 'Graduate'];
   qualification = 'Enter qualifications';
   city = '';
-  bebysitters: Bebysitter[];
-  filteredBabysitters: Bebysitter[];
+  bebysitters: Babysitter[];
+  filteredBabysitters: Babysitter[];
 
 
 
-  constructor(private bebysitterService: BebysitterService, private router: Router,
+  constructor(private bebysitterService: BabysitterService, private router: Router,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -60,7 +60,7 @@ export class BebysitterAdsListComponent implements OnInit {
   }
 
   filterCity() {
-    this.bebysitters = this.bebysitterService.bebysitters;
+    this.bebysitters = this.bebysitterService.babysitters;
 
     if (!this.city.length && this.qualification === 'Enter qualifications') {
       this.filteredBabysitters = this.bebysitters;
