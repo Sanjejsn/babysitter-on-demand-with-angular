@@ -47,30 +47,31 @@ export class BabysitterAdsListComponent implements OnInit {
         }
       );
 
-    this.filterCity();
+    this.filterList();
 
   }
 
   onSubmit(form: NgForm) {
 
     this.qualification = form.value.qualifications;
-    this.city = form.value.city.toLowerCase();
+    this.city = form.value.city;
     this.router.navigate(['/babysitter-ads'], { queryParams: { city: this.city, qualification: this.qualification } });
-    this.filterCity();
+    this.filterList();
   }
 
-  filterCity() {
+  filterList() {
     this.bebysitters = this.bebysitterService.babysitters;
 
     if (!this.city.length && this.qualification === 'Enter qualifications') {
       this.filteredBabysitters = this.bebysitters;
     } else if (this.qualification === 'Enter qualifications') {
-      this.filteredBabysitters = this.bebysitters.filter(sitter => sitter.city.toLowerCase() === this.city);
-    } else if (!this.city.length && this.qualification !== 'Enter qualifications') {
+      this.filteredBabysitters = this.bebysitters.filter(sitter => sitter.city === this.city);
+    } else if (!this.city.length) {
       this.filteredBabysitters = this.bebysitters.filter(sitter => sitter.qualifications === this.qualification);
     } else {
       this.filteredBabysitters =
-        this.bebysitters.filter(sitter => sitter.city.toLowerCase() === this.city && sitter.qualifications === this.qualification);
+        this.bebysitters.filter
+          (sitter => sitter.city === this.city && sitter.qualifications === this.qualification);
     }
 
   }
@@ -82,6 +83,7 @@ export class BabysitterAdsListComponent implements OnInit {
       return true;
     }
   }
+
 }
 
 

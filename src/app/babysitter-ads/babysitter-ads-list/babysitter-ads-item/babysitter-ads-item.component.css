@@ -24,7 +24,6 @@ img {
 
 h4 {
     font-size: 18px;
-    color:#6495ED;
 }
 
 a {
@@ -33,9 +32,6 @@ a {
 
 }
 
-.city {
-    color: gray;
-}
 
 @media screen and (max-width: 640px) {
 

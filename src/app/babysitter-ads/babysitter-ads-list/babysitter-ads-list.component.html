@@ -1,5 +1,9 @@
 <form class="filter-form" (ngSubmit)="onSubmit(form)" #form="ngForm">
-  <input type="text" name="city" placeholder="Enter city name" ngModel [(ngModel)]="city" autocomplete="off">
+  <input list="city" name="city" placeholder="Enter city name" ngModel [(ngModel)]="city" autocomplete="off">
+  <datalist id="city">
+    <option value="Belgrade">
+      <option value="Kikinda">
+  </datalist>
   <select name="qualifications" id="qualifications" ngModel [ngModel]="qualification">
     <option *ngFor="let qualification of qualifications" [ngValue]="qualification">{{ qualification }}</option>
   </select>
