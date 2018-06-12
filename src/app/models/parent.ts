@@ -1,8 +1,7 @@
-let nextId = 0;
 
 export class Parent {
 
-
+    static lastId: number;
     public name: string;
     public email: string;
     public city: string;
@@ -20,8 +19,17 @@ export class Parent {
         this.email = email;
         this.city = city;
         this.description = description;
-        this.id = nextId++;
+        this.id = Parent.counter();
 
+    }
+
+    static counter() {
+        if (Parent.lastId == null) {
+            Parent.lastId = 0;
+        } else {
+            Parent.lastId = Parent.lastId + 1;
+        }
+        return Parent.lastId;
     }
 
 

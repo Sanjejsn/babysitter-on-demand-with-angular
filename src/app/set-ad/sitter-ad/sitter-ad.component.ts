@@ -32,12 +32,10 @@ export class SitterAdComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    this.submitedSitter = form.value;
-    this.submitedSitter.id = this.babysitterService.babysitters.length;
+    this.submitedSitter = new Babysitter(form.value.name, form.value.email,
+      form.value.age, form.value.city, form.value.imagePath, form.value.qualifications, form.value.description);
     this.babysitterService.babysitters.push(this.submitedSitter);
     form.reset();
   }
-
-
 
 }

@@ -1,8 +1,6 @@
-let nextId = 0;
-
 export class Babysitter {
 
-
+    static lastId: number;
     public name: string;
     public email: string;
     public age: string;
@@ -11,6 +9,7 @@ export class Babysitter {
     public qualifications: string;
     public description: string;
     public id: number;
+
 
 
     constructor(name: string,
@@ -29,10 +28,16 @@ export class Babysitter {
         this.imagePath = imagePath;
         this.qualifications = qualifications;
         this.description = description;
-        this.id = nextId++;
+        this.id = Babysitter.counter();
 
     }
 
-
-
+    static counter() {
+        if (Babysitter.lastId == null) {
+            Babysitter.lastId = 0;
+        } else {
+            Babysitter.lastId = Babysitter.lastId + 1;
+        }
+        return Babysitter.lastId;
+    }
 }

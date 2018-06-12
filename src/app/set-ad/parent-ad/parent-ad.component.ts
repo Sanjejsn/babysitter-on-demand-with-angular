@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ParentService } from '../../parent-ads/parent.service';
 import { Parent } from '../../models/parent';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-parent-ad',
@@ -27,11 +28,11 @@ export class ParentAdComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(form) {
-    this.submitedParent = form.value;
-    this.submitedParent.id = this.parentService.parents.length;
+  onSubmit(form: NgForm) {
+    this.submitedParent = new Parent(form.value.name, form.value.email, form.value.city, form.value.description);
     this.parentService.parents.push(this.submitedParent);
     form.reset();
   }
 
 }
+
