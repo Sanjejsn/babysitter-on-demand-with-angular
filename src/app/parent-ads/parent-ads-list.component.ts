@@ -4,6 +4,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Parent } from '../models/parent';
 import { ParentService } from './parent.service';
+import { Subscription } from 'rxjs/Subscription';
 
 
 @Component({
@@ -15,6 +16,8 @@ export class ParentAdsListComponent implements OnInit {
 
   city = '';
   parents: Parent[];
+  subscription: Subscription;
+
 
   constructor(private parentService: ParentService, private router: Router, private route: ActivatedRoute) { }
 
@@ -43,7 +46,12 @@ export class ParentAdsListComponent implements OnInit {
 
   filterCity() {
 
-    this.parents = this.parentService.parents;
+    this.parents = this.parentService.getPrents();
+
+    this.subscription = this.parentService.parentsChanged.subscribe(
+      (parents: Parent[]) => this.parents = parents
+    );
+
     this.parents = !this.city.length ? this.parents :
       this.parents.filter(parent => parent.city.toLowerCase() === this.city);
   }

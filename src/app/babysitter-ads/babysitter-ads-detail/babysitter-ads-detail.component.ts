@@ -19,7 +19,7 @@ export class BabysitterAdsDetailComponent implements OnInit {
 
   ngOnInit() {
     this.id = +this.route.snapshot.params['id']; // converts string into number
-    this.sitter = this.babysitterService.babysitters.find(element => element.id === this.id);
+    this.sitter = this.babysitterService.getBabysitters().find(element => element.id === this.id);
   }
 
   goBack() {

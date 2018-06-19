@@ -23,7 +23,7 @@ export class ParentAdsDetailComponent implements OnInit {
       .subscribe(
         (params: Params) => {
           this.id = +params['id'];
-          this.parent = this.parentService.parents.find(element => element.id === this.id);
+          this.parent = this.parentService.getPrents().find(element => element.id === this.id);
         }
       );
   }

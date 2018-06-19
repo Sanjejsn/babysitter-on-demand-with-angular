@@ -1,8 +1,11 @@
 import { Parent } from '../models/parent';
+import { Subject } from 'rxjs/Subject';
 
 export class ParentService {
 
-    parents: Parent[] = [
+    parentsChanged = new Subject<Parent[]>();
+
+    private parents: Parent[] = [
         new Parent(
             'Marija Petrovic',
             'fake@fake.com',
@@ -28,6 +31,15 @@ export class ParentService {
       harum magnam aut. Nobis animi fugiat amet voluptas minus quo rem officia, asperiores quae! Quasi delectus explicabo illo?`
         )
     ];
+
+    getPrents() {
+        return [...this.parents];
+    }
+
+    addParent(parent: Parent) {
+        this.parents.push(parent);
+        this.parentsChanged.next([...this.parents]);
+    }
 
 
 

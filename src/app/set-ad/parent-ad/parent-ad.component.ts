@@ -30,7 +30,7 @@ export class ParentAdComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     this.submitedParent = new Parent(form.value.name, form.value.email, form.value.city, form.value.description);
-    this.parentService.parents.push(this.submitedParent);
+    this.parentService.addParent(this.submitedParent);
     form.reset();
   }
 

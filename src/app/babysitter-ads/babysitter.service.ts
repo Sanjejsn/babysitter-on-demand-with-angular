@@ -1,9 +1,13 @@
 import { Babysitter } from '../models/babysitter';
+import { Subject } from 'rxjs/Subject';
 
 
 export class BabysitterService {
 
-    babysitters: Babysitter[] = [
+    babysitterChanged = new Subject<Babysitter[]>();
+
+
+    private babysitters: Babysitter[] = [
         new Babysitter(
             'Ivana Cuk',
             'noreply@noreply.com',
@@ -39,4 +43,12 @@ export class BabysitterService {
         )
     ];
 
+    getBabysitters() {
+        return [...this.babysitters];
+    }
+
+    addBabysitter(babysitter: Babysitter) {
+        this.babysitters.push(babysitter);
+        this.babysitterChanged.next([...this.babysitters]);
+    }
 }

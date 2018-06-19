@@ -1,26 +1,28 @@
-import { Component, OnInit, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { Babysitter } from '../../models/babysitter';
 import { NgForm } from '@angular/forms';
 import { BabysitterService } from '../babysitter.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-babysitter-ads-list',
   templateUrl: './babysitter-ads-list.component.html',
   styleUrls: ['./babysitter-ads-list.component.css']
 })
-export class BabysitterAdsListComponent implements OnInit {
+export class BabysitterAdsListComponent implements OnInit, OnDestroy {
 
   qualifications = ['Enter qualifications', 'Elementary school', 'High school', 'Student', 'Graduate'];
   qualification = 'Enter qualifications';
   city = '';
-  bebysitters: Babysitter[];
+  babysitters: Babysitter[];
   filteredBabysitters: Babysitter[];
+  subscription: Subscription;
 
 
 
-  constructor(private bebysitterService: BabysitterService, private router: Router,
+  constructor(private babysitterService: BabysitterService, private router: Router,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -48,7 +50,6 @@ export class BabysitterAdsListComponent implements OnInit {
       );
 
     this.filterList();
-
   }
 
   onSubmit(form: NgForm) {
@@ -60,28 +61,36 @@ export class BabysitterAdsListComponent implements OnInit {
   }
 
   filterList() {
-    this.bebysitters = this.bebysitterService.babysitters;
+
+    this.babysitters = this.babysitterService.getBabysitters();
+
+    this.subscription = this.babysitterService.babysitterChanged.subscribe(
+      (babysitters: Babysitter[]) => this.babysitters = babysitters
+    );
 
     if (!this.city.length && this.qualification === 'Enter qualifications') {
-      this.filteredBabysitters = this.bebysitters;
+      this.filteredBabysitters = this.babysitters;
     } else if (this.qualification === 'Enter qualifications') {
-      this.filteredBabysitters = this.bebysitters.filter(sitter => sitter.city === this.city);
+      this.filteredBabysitters = this.babysitters.filter(sitter => sitter.city === this.city);
     } else if (!this.city.length) {
-      this.filteredBabysitters = this.bebysitters.filter(sitter => sitter.qualifications === this.qualification);
+      this.filteredBabysitters = this.babysitters.filter(sitter => sitter.qualifications === this.qualification);
     } else {
       this.filteredBabysitters =
-        this.bebysitters.filter
+        this.babysitters.filter
           (sitter => sitter.city === this.city && sitter.qualifications === this.qualification);
     }
-
   }
 
   noResults() {
-    if (this.filteredBabysitters.length) {
+    if (this.babysitters.length) {
       return false;
     } else {
       return true;
     }
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }
