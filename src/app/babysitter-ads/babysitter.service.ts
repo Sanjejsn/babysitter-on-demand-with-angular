@@ -1,11 +1,14 @@
 import { Babysitter } from '../models/babysitter';
+import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
+import { HttpClient } from '@angular/common/http';
+import { map, filter } from 'rxjs/operators';
 
 
+@Injectable()
 export class BabysitterService {
 
     babysitterChanged = new Subject<Babysitter[]>();
-
 
     private babysitters: Babysitter[] = [
         new Babysitter(
@@ -13,7 +16,7 @@ export class BabysitterService {
             'noreply@noreply.com',
             '1980',
             'Belgrade',
-            'http://www.americantraininginc.com/wp-content/uploads/2017/02/babysitter.jpg',
+            './assets/images/babysitter1.jpg',
             'Elementary school',
             `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, suscipit distinctio, laborum nulla dolor facilis totam
       voluptatum atque facere quod veniam. Fugiat consectetur laudantium ex ratione deserunt beatae ut similique eveniet, veniam
@@ -24,7 +27,7 @@ export class BabysitterService {
             'fakemail@fakemail.com',
             '1992',
             'Belgrade',
-            'https://blog.littlelane.com/wp-content/uploads/2015/04/nanny-babysitter-san-francisco-marin1.jpg',
+            './assets/images/babysitter2.jpg',
             'Student',
             `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, suscipit distinctio, laborum nulla dolor facilis totam
       voluptatum atque facere quod veniam. Fugiat consectetur laudantium ex ratione deserunt beatae ut similique eveniet, veniam
@@ -35,13 +38,16 @@ export class BabysitterService {
             'fake@fake.com',
             '1990',
             'Kikinda',
-            'https://img.halooglasi.com/slike/clanci/Thumbs/M/sat-rada-bebisiterke-14-92-eur-1832-1832.jpg',
+            './assets/images/babysitter3.jpg',
             'High school',
             `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, suscipit distinctio, laborum nulla dolor facilis totam
       voluptatum atque facere quod veniam. Fugiat consectetur laudantium ex ratione deserunt beatae ut similique eveniet, veniam
       harum magnam aut. Nobis animi fugiat amet voluptas minus quo rem officia, asperiores quae! Quasi delectus explicabo illo?`,
         )
     ];
+
+    constructor(private http: HttpClient) { }
+
 
     getBabysitters() {
         return [...this.babysitters];
@@ -51,4 +57,8 @@ export class BabysitterService {
         this.babysitters.push(babysitter);
         this.babysitterChanged.next([...this.babysitters]);
     }
+
+    // getMessage() {
+    //     return this.http.get<{ message: string }>('http://localhost:3000/products/90');
+    // }
 }

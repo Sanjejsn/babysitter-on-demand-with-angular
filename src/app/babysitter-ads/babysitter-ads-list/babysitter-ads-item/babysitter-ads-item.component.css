@@ -1,25 +1,42 @@
 .sitter-item {
-    display: grid;
+    display: flex;
+    flex-direction: row;
     max-width: 80%;
     margin: 0 auto;
-    grid-template-columns: auto auto;
     margin-top: 20px;
     background-color: white;
     padding: 15px;
     border-radius: 10px;
-    
 }
+
+.img-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:220px;
+}
+
 
 img {
-    max-height: 150px;
-    width: auto;
+    display: block;
+    max-width:220px;
+    height: auto;
     border-radius: 100%;
-
 }
 
+
 .description {
-    display: grid;
+    padding-top:15px;
     padding-left: 20px;
+}
+
+.city {
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+
+.text-info{
+    padding-bottom: 10px;
 }
 
 h4 {
@@ -36,15 +53,14 @@ a {
 @media screen and (max-width: 640px) {
 
     .sitter-item {
+        flex-direction: column;
         max-width: 90%;
-        grid-template-columns: auto;
-        justify-items: center;
     }
 
-    .description {
-        padding-top: 20px;
-        grid-row-gap: 10px;
-    }
-
+.img-wrapper {
+    display: flex;
+    justify-content: center;
+    width:auto;
+}
 
 }

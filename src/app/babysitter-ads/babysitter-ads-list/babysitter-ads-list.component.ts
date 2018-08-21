@@ -19,6 +19,7 @@ export class BabysitterAdsListComponent implements OnInit, OnDestroy {
   babysitters: Babysitter[];
   filteredBabysitters: Babysitter[];
   subscription: Subscription;
+  // message: string;
 
 
 
@@ -26,6 +27,10 @@ export class BabysitterAdsListComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute) { }
 
   ngOnInit() {
+    // this.babysitterService.getMessage().subscribe(
+    //   mess => this.message = mess.message
+    // );
+
 
     this.route.queryParams
       .subscribe(

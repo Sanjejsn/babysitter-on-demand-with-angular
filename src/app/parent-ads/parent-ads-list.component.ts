@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs/Subscription';
   templateUrl: './parent-ads-list.component.html',
   styleUrls: ['./parent-ads-list.component.css']
 })
-export class ParentAdsListComponent implements OnInit {
+export class ParentAdsListComponent implements OnInit, OnDestroy {
 
   city = '';
   parents: Parent[];
@@ -62,5 +62,9 @@ export class ParentAdsListComponent implements OnInit {
     } else {
       return true;
     }
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

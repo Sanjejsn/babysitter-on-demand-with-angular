@@ -22,6 +22,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { BabysitterService } from './babysitter-ads/babysitter.service';
 import { BabysitterAdsItemComponent } from './babysitter-ads/babysitter-ads-list/babysitter-ads-item/babysitter-ads-item.component';
 import { BabysitterAdsListComponent } from './babysitter-ads/babysitter-ads-list/babysitter-ads-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -45,8 +46,8 @@ import { BabysitterAdsListComponent } from './babysitter-ads/babysitter-ads-list
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    AngularFontAwesomeModule
-
+    AngularFontAwesomeModule,
+    HttpClientModule
   ],
   providers: [
     BabysitterService,

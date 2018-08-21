@@ -1,15 +1,16 @@
 <div class="sitter-item">
-  <img src="{{sitter.imagePath}}" alt="{{sitter.name}}">
+  <div class="img-wrapper">
+    <img src="{{sitter.imagePath}}" alt="{{sitter.name}}">
+  </div>
   <div class="description">
     <h4>{{sitter.name}}, {{sitter.age}}</h4>
     <p class="city">City:
       <span>{{sitter.city}}</span>
     </p>
-    <p>{{ (sitter.description.length>250)? (sitter.description | slice:0:250)+'...':(sitter.description) }}
+    <p class="text-info">{{ (sitter.description.length>250)? (sitter.description | slice:0:250)+'...':(sitter.description) }}
     </p>
     <div>
       <a (click)="goToDetail()">Babysitter profile</a>
-
     </div>
   </div>
 </div>
